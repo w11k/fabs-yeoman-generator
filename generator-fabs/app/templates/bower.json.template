@@ -1,0 +1,12 @@
+{
+  "name": "<%= nameDashed %>",
+
+  "devDependencies": {
+    "angular": "1.2.20"<% if (spec || e2e) { %>,
+    "angular-mocks": "1.2.20"<% } %><% if (ie8) { %>,
+    "json3": "3.3.0",
+    "respond": "1.4.2",
+    "es5-shim": "2.3.0",
+    "console-polyfill": "0.1.1"<% } %>
+  }
+}
