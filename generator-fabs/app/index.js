@@ -157,33 +157,33 @@ var generator = yeoman.generators.Base.extend({
     console.log('Creating tool config files');
 
     if (settings.bower) {
-      this.copy('.bowerrc', '.bowerrc');
+      this.copy('_.bowerrc', '.bowerrc');
     }
 
     if (settings.git) {
-      this.copy('.gitignore', '.gitignore');
+      this.copy('_.gitignore', '.gitignore');
     }
 
     if (settings.jsHint) {
-      this.copy('.jshintrc', '.jshintrc');
+      this.copy('_.jshintrc', '.jshintrc');
     }
   },
 
   createProjectFiles: function () {
     console.log('Creating project files');
 
-    this.copy('Gruntfile.js', 'Gruntfile.js');
-    this.copy('README.md', 'README.md');
+    this.copy('_Gruntfile.js', 'Gruntfile.js');
+    this.copy('_README.md', 'README.md');
 
-    this.template('package.json.template', 'package.json', settings);
-    this.template('bower.json.template', 'bower.json', settings);
+    this.template('_package.json.template', 'package.json', settings);
+    this.template('_bower.json.template', 'bower.json', settings);
   },
 
   createFabsFiles: function () {
     console.log('Creating fabs files');
 
-    this.copy('build-config/developer.config.tpl.js', 'build-config/developer.config.tpl.js');
-    this.template('build-config/project.config.js.template', 'build-config/project.config.js', settings);
+    this.copy('build-config/_developer.config.tpl.js', 'build-config/developer.config.tpl.js');
+    this.template('build-config/_project.config.js.template', 'build-config/project.config.js', settings);
   },
 
   createSourceFiles: function () {
@@ -191,27 +191,27 @@ var generator = yeoman.generators.Base.extend({
 
     this.mkdir('assets');
 
-    this.template('src/app/app.js.template', 'src/app/' + settings.nameDashed + '.js', settings);
-    this.template('src/index.html.template', 'src/index.html', settings);
+    this.template('src/app/_app.js.template', 'src/app/' + settings.nameDashed + '.js', settings);
+    this.template('src/_index.html.template', 'src/index.html', settings);
 
     if (settings.spec) {
-      this.template('src/app/app.spec.js.template', 'src/app/' + settings.nameDashed + '.spec.js', settings);
+      this.template('src/app/_app.spec.js.template', 'src/app/' + settings.nameDashed + '.spec.js', settings);
     }
 
     if (settings.e2e) {
-      this.template('src/app/app.e2e.js.template', 'src/app/' + settings.nameDashed + '.e2e.js', settings);
+      this.template('src/app/_app.e2e.js.template', 'src/app/' + settings.nameDashed + '.e2e.js', settings);
     }
 
     if (settings.spec || settings.e2e) {
-      this.template('src/app/app.mock.js.template', 'src/app/' + settings.nameDashed + '.mock.js', settings);
+      this.template('src/app/_app.mock.js.template', 'src/app/' + settings.nameDashed + '.mock.js', settings);
     }
 
     if (settings.less) {
-      this.template('src/app/app.less', 'src/app/' + settings.nameDashed + '.less', settings);
+      this.template('src/app/_app.less', 'src/app/' + settings.nameDashed + '.less', settings);
     }
 
     if (settings.sass) {
-      this.template('src/app/app.scss', 'src/app/' + settings.nameDashed + '.scss', settings);
+      this.template('src/app/_app.scss', 'src/app/' + settings.nameDashed + '.scss', settings);
     }
   },
 
