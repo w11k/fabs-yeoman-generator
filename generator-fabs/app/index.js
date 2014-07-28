@@ -104,6 +104,17 @@ var generator = yeoman.generators.Base.extend({
       'Do you want to write end-to-end tests?',
       1
     );
+
+    questions.testBrowsers = {
+      type    : 'checkbox',
+      name    : 'testBrowsers',
+      message : 'Which browsers do you want to use to run tests with?',
+      choices: [ 'PhantomJS', 'Chrome', 'Firefox', 'Internet Explorer', 'Safari'],
+      default : ['PhantomJS'],
+      when: function (answers) {
+        return answers.spec || answers.e2e;
+      }
+    };
   },
 
   promptingProject: function () {
@@ -145,7 +156,8 @@ var generator = yeoman.generators.Base.extend({
         questions.ie8,
         questions.ie9,
         questions.spec,
-        questions.e2e
+        questions.e2e,
+        questions.testBrowsers
       ],
       function (answers) {
         lodash.extend(settings, answers);
