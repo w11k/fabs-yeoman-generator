@@ -1,6 +1,15 @@
 # fabs Yeoman Generator Changelog
 
 
+<a name="0.1.2"></a>
+## 0.1.2 (2014-07-28)
+
+
+### Bug Fixes
+
+* **test setup:** add question about browsers to run tests with ([7df4226](https://github.com/w11k/fabs-yeoman-generator/commit/7df4226603ec1633a74d05b785355e71094a4260))
+
+
 <a name="0.1.1"></a>
 ## 0.1.1 (2014-07-28)
 
