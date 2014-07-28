@@ -20,6 +20,16 @@ module.exports = {
       runInDev: <%= bower %>,
       runInDist: <%= bower %>
     },
+    spec: {
+      runInDev: <%= spec %>,
+      runInDist: <%= spec %><% if (spec || e2e) { %>,
+      browsers: <%= JSON.stringify(testBrowsers) %><% } %>
+    },
+    e2e: {
+      runInDev: <%= e2e %>,
+      runInDist: <%= e2e %><% if (spec || e2e) { %>,
+      browsers: <%= JSON.stringify(testBrowsers) %><% } %>
+    }
   },
 
   app: {
