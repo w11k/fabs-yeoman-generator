@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('<%= angularModule %>.mock', ['ngMockE2E', 'app']);
+angular.module('<%= angularModule %>.mock', ['ngMockE2E', '<%= angularModule %>']);
 
 angular.module('<%= angularModule %>.mock').run(function ($httpBackend) {
 
