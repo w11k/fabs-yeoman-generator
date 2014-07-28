@@ -3,11 +3,11 @@
 module.exports = {
 
   build: {
-    spec: {
-      browsers: ['Chrome']
+    bower: {
+      runInDev: false
     },
-    e2e: {
-      browsers: ['Chrome']
+    server: {
+      runInDist: true
     }
   }
 
