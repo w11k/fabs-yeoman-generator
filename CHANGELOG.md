@@ -1,6 +1,14 @@
 # fabs Yeoman Generator Changelog
 
 
+<a name="0.1.3"></a>
+## 0.1.3 (2014-09-17)
+
+### Bug Fixes
+
+* **generated source:** add IE8 polyfills to project.config.js ([c7e7e58](https://github.com/w11k/fabs-yeoman-generator/commit/c7e7e582047a636abb0edbbebe9bddbf918e983b))
+
+
 <a name="0.1.2"></a>
 ## 0.1.2 (2014-07-28)
 
