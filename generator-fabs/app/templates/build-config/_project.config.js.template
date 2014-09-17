@@ -46,16 +46,20 @@ module.exports = {
       js: [
         'angular/angular.js'
       ],
-      js_mock: [<% if (spec || e2e) { %>// required to run spec tests
-        'angular-mocks/angular-mocks.js'<% } %>],
+      js_mock: [<% if (spec || e2e) { %>
+        // required to run spec tests
+        'angular-mocks/angular-mocks.js'
+      <% } %>],
       js_spec: [],
       js_e2e: [],
       css: [],
-      assets: [<% if (ie8) { %>// required to run spec tests
-         'json3/lib/json3.min.js',
-         'respond/dest/respond.min.js',
-         'console-polyfill/index.js',
-         'es5-shim/es5-shim.min.js'<% } %>]
+      assets: [<% if (ie8) { %>
+        // IE8 polyfills
+        'json3/lib/json3.min.js',
+        'respond/dest/respond.min.js',
+        'console-polyfill/index.js',
+        'es5-shim/es5-shim.min.js'
+       <% } %>]
     }
   }
 
