@@ -1,6 +1,15 @@
 # fabs Yeoman Generator Changelog
 
 
+<a name="0.1.5"></a>
+### 0.1.5 (2014-11-18)
+
+
+#### Bug Fixes
+
+* **fabs:** update fabs to 0.6.5 ([01ae27d6](https://github.com/w11k/fabs-yeoman-generator/commit/01ae27d680e8923f5868d6f504147ec5718640c7))
+
+
 <a name="0.1.4"></a>
 ### 0.1.4 (2014-10-20)
 
