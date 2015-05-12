@@ -203,27 +203,27 @@ var generator = yeoman.generators.Base.extend({
 
     this.mkdir('assets');
 
-    this.template('src/app/_app.js.template', 'src/app/' + settings.nameDashed + '.js', settings);
+    this.template('src/_app.js.template', 'src/' + settings.nameDashed + '.js', settings);
     this.template('src/_index.html.template', 'src/index.html', settings);
 
     if (settings.spec) {
-      this.template('src/app/_app.spec.js.template', 'src/app/' + settings.nameDashed + '.spec.js', settings);
+      this.template('src/_app.spec.js.template', 'src/' + settings.nameDashed + '.spec.js', settings);
     }
 
     if (settings.e2e) {
-      this.template('src/app/_app.e2e.js.template', 'src/app/' + settings.nameDashed + '.e2e.js', settings);
+      this.template('src/_app.e2e.js.template', 'src/' + settings.nameDashed + '.e2e.js', settings);
     }
 
     if (settings.spec || settings.e2e) {
-      this.template('src/app/_app.mock.js.template', 'src/app/' + settings.nameDashed + '.mock.js', settings);
+      this.template('src/_app.mock.js.template', 'src/' + settings.nameDashed + '.mock.js', settings);
     }
 
     if (settings.less) {
-      this.template('src/app/_app.less', 'src/app/' + settings.nameDashed + '.less', settings);
+      this.template('src/_app.less', 'src/' + settings.nameDashed + '.less', settings);
     }
 
     if (settings.sass) {
-      this.template('src/app/_app.scss', 'src/app/' + settings.nameDashed + '.scss', settings);
+      this.template('src/_app.scss', 'src/' + settings.nameDashed + '.scss', settings);
     }
   },
 
