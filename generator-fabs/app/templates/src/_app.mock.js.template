@@ -1,16 +1,18 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('<%= angularModule %>.mock', ['ngMockE2E', '<%= angularModule %>']);
+  var mockModule = angular.module('<%= angularModule %>.mock', ['ngMockE2E', '<%= angularModule %>']);
 
-angular.module('<%= angularModule %>.mock').run(function ($httpBackend) {
+  mockModule.run(function ($httpBackend) {
 
-  function escapeForRegExp(str) {
-    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
-  }
+    function escapeForRegExp(str) {
+      return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+    }
 
-  var apiUrlPrefix = '/api/';
+    var apiUrlPrefix = '/api/';
 
-  // pass through all gets to a url not starting with our api prefix
-  var apiUrlRegExp = new RegExp('^(?!' + escapeForRegExp(apiUrlPrefix) + ').+$');
-  $httpBackend.whenGET(apiUrlRegExp).passThrough();
-});
+    // pass through all gets to a url not starting with our api prefix
+    var apiUrlRegExp = new RegExp('^(?!' + escapeForRegExp(apiUrlPrefix) + ').+$');
+    $httpBackend.whenGET(apiUrlRegExp).passThrough();
+  });
+})();
