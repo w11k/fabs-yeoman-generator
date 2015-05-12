@@ -225,6 +225,10 @@ var generator = yeoman.generators.Base.extend({
     if (settings.sass) {
       this.template('src/_app.scss', 'src/' + settings.nameDashed + '.scss', settings);
     }
+
+    if (settings.sass === false && settings.less === false) {
+      this.template('src/_app.css', 'src/' + settings.nameDashed + '.css', settings);
+    }
   },
 
   installNpmAndBower: function () {
