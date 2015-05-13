@@ -115,6 +115,42 @@ var generator = yeoman.generators.Base.extend({
         return answers.spec || answers.e2e;
       }
     };
+
+    questions.proxy = yesNoQuestion(
+      'proxy',
+      'Do you want to add a proxy to your backend to avoid CORS problems?',
+      1
+    );
+
+    questions.proxy_host = {
+      type: 'input',
+      name: 'proxy_host',
+      message: 'What is the host of the proxy?',
+      default: 'localhost',
+      when: function (answers) {
+        return answers.proxy;
+      }
+    };
+
+    questions.proxy_port = {
+      type: 'input',
+      name: 'proxy_port',
+      message: 'What is the port of the proxy?',
+      default: '8080',
+      when: function (answers) {
+        return answers.proxy;
+      }
+    };
+
+    questions.proxy_context = {
+      type: 'input',
+      name: 'proxy_context',
+      message: 'What is the context / url prefix of requests that should be redirected to the proxy?',
+      default: '/api',
+      when: function (answers) {
+        return answers.proxy;
+      }
+    };
   },
 
   promptingProject: function () {
@@ -157,7 +193,11 @@ var generator = yeoman.generators.Base.extend({
         questions.ie9,
         questions.spec,
         questions.e2e,
-        questions.testBrowsers
+        questions.testBrowsers,
+        questions.proxy,
+        questions.proxy_host,
+        questions.proxy_port,
+        questions.proxy_context
       ],
       function (answers) {
         lodash.extend(settings, answers);
