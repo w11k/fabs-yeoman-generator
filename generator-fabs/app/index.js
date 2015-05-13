@@ -225,7 +225,7 @@ var generator = yeoman.generators.Base.extend({
     console.log('Creating project files');
 
     this.copy('_Gruntfile.js', 'Gruntfile.js');
-    this.copy('_README.md', 'README.md');
+    this.template('_README.md.template', 'README.md', settings);
 
     this.template('_package.json.template', 'package.json', settings);
     this.template('_bower.json.template', 'bower.json', settings);
