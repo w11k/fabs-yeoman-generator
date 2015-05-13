@@ -115,6 +115,42 @@ var generator = yeoman.generators.Base.extend({
         return answers.spec || answers.e2e;
       }
     };
+
+    questions.proxy = yesNoQuestion(
+      'proxy',
+      'Do you want to add a proxy to your backend to avoid CORS problems?',
+      1
+    );
+
+    questions.proxy_host = {
+      type: 'input',
+      name: 'proxy_host',
+      message: 'What is the host of the proxy?',
+      default: 'localhost',
+      when: function (answers) {
+        return answers.proxy;
+      }
+    };
+
+    questions.proxy_port = {
+      type: 'input',
+      name: 'proxy_port',
+      message: 'What is the port of the proxy?',
+      default: '8080',
+      when: function (answers) {
+        return answers.proxy;
+      }
+    };
+
+    questions.proxy_context = {
+      type: 'input',
+      name: 'proxy_context',
+      message: 'What is the context / url prefix of requests that should be redirected to the proxy?',
+      default: '/api',
+      when: function (answers) {
+        return answers.proxy;
+      }
+    };
   },
 
   promptingProject: function () {
@@ -157,7 +193,11 @@ var generator = yeoman.generators.Base.extend({
         questions.ie9,
         questions.spec,
         questions.e2e,
-        questions.testBrowsers
+        questions.testBrowsers,
+        questions.proxy,
+        questions.proxy_host,
+        questions.proxy_port,
+        questions.proxy_context
       ],
       function (answers) {
         lodash.extend(settings, answers);
@@ -185,7 +225,7 @@ var generator = yeoman.generators.Base.extend({
     console.log('Creating project files');
 
     this.copy('_Gruntfile.js', 'Gruntfile.js');
-    this.copy('_README.md', 'README.md');
+    this.template('_README.md.template', 'README.md', settings);
 
     this.template('_package.json.template', 'package.json', settings);
     this.template('_bower.json.template', 'bower.json', settings);
@@ -203,27 +243,31 @@ var generator = yeoman.generators.Base.extend({
 
     this.mkdir('assets');
 
-    this.template('src/app/_app.js.template', 'src/app/' + settings.nameDashed + '.js', settings);
+    this.template('src/_app.js.template', 'src/' + settings.nameDashed + '.js', settings);
     this.template('src/_index.html.template', 'src/index.html', settings);
 
     if (settings.spec) {
-      this.template('src/app/_app.spec.js.template', 'src/app/' + settings.nameDashed + '.spec.js', settings);
+      this.template('src/_app.spec.js.template', 'src/' + settings.nameDashed + '.spec.js', settings);
     }
 
     if (settings.e2e) {
-      this.template('src/app/_app.e2e.js.template', 'src/app/' + settings.nameDashed + '.e2e.js', settings);
+      this.template('src/_app.e2e.js.template', 'src/' + settings.nameDashed + '.e2e.js', settings);
     }
 
     if (settings.spec || settings.e2e) {
-      this.template('src/app/_app.mock.js.template', 'src/app/' + settings.nameDashed + '.mock.js', settings);
+      this.template('src/_app.mock.js.template', 'src/' + settings.nameDashed + '.mock.js', settings);
     }
 
     if (settings.less) {
-      this.template('src/app/_app.less', 'src/app/' + settings.nameDashed + '.less', settings);
+      this.template('src/_app.less', 'src/' + settings.nameDashed + '.less', settings);
     }
 
     if (settings.sass) {
-      this.template('src/app/_app.scss', 'src/app/' + settings.nameDashed + '.scss', settings);
+      this.template('src/_app.scss', 'src/' + settings.nameDashed + '.scss', settings);
+    }
+
+    if (settings.sass === false && settings.less === false) {
+      this.template('src/_app.css', 'src/' + settings.nameDashed + '.css', settings);
     }
   },
 

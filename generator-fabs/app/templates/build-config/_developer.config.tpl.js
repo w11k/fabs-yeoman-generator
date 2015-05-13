@@ -2,12 +2,12 @@
 
 module.exports = {
 
-  build: {
-    bower: {
-      runInDev: false
+  'build': {
+    'bower': {
+      'runInDev': false
     },
-    server: {
-      runInDist: true
+    'server': {
+      'runInDist': true
     }
   }
 

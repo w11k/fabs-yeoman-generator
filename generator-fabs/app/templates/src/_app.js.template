@@ -1,0 +1,11 @@
+(function() {
+  'use strict';
+
+  var module = angular.module('<%= angularModule %>', []);
+
+  function AppCtrl($scope) {
+      $scope.welcome = 'Hello fabs!';
+    }
+
+  module.controller(AppCtrl.name, AppCtrl);
+})();

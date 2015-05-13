@@ -1,6 +1,25 @@
 # fabs Yeoman Generator Changelog
 
 
+<a name="0.2.0"></a>
+## 0.2.0 (2015-05-13)
+
+
+#### Bug Fixes
+
+* **dependencies:** update angular to 1.3.15 ([7098f01e](https://github.com/w11k/fabs-yeoman-generator/commit/7098f01eb237b4e5646a7b34e997113090f380a5))
+* **fabs:** update fabs to 0.10.0 ([b180ae7b](https://github.com/w11k/fabs-yeoman-generator/commit/b180ae7b70d90fa21bd6cbc59cb01284e523c14d))
+* **generated-code:** surround property names in build config with quotes ([d3b240fe](https://github.com/w11k/fabs-yeoman-generator/commit/d3b240fe1ff35f37921478fea4aeb6188ba4af22))
+
+
+#### Features
+
+* **build-config:** add questions about backend proxy and generate build-configuration ([fd51d9f8](https://github.com/w11k/fabs-yeoman-generator/commit/fd51d9f8d8da938c059b42b095fe0f8f326f49be))
+* **code-generation:** adjust generated code to be more ES6 style and less Angular 1.x ([46244354](https://github.com/w11k/fabs-yeoman-generator/commit/46244354d22f12f106b9b08d2b55d224f7ac09d9))
+* **readme:** add project name to generated readme.md ([08b4bec7](https://github.com/w11k/fabs-yeoman-generator/commit/08b4bec76135e8eafdbed4b0b82d311345b63077))
+* **styling:** add plain css file to project if neither sass nor less is activated ([a288c8c4](https://github.com/w11k/fabs-yeoman-generator/commit/a288c8c408e3b9ee26fb59490f9f4298ac1e6fff))
+
+
 <a name="0.1.5"></a>
 ## 0.1.5 (2014-11-18)
 

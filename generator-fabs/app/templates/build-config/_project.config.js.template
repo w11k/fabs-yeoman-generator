@@ -2,58 +2,67 @@
 
 module.exports = {
 
-  build: {
-    sass: {
-      enabled: <%= sass %>
+  'build': {
+    'sass': {
+      'enabled': <%= sass %>
     },
-    less: {
-      enabled: <%= less %>
+    'less': {
+      'enabled': <%= less %>
     },
-    blessed: {
-      enabled: <%= ie8 || ie9 %>
+    'blessed': {
+      'enabled': <%= ie8 || ie9 %>
     },
-    jshint: {
-      runInDev: <%= jsHint %>,
-      runInDist: <%= jsHint %>
+    'jshint': {
+      'runInDev': <%= jsHint %>,
+      'runInDist': <%= jsHint %>
     },
-    bower: {
-      runInDev: <%= bower %>,
-      runInDist: <%= bower %>
+    'bower': {
+      'runInDev': <%= bower %>,
+      'runInDist': <%= bower %>
     },
-    spec: {
-      runInDev: <%= spec %>,
-      runInDist: <%= spec %><% if (spec || e2e) { %>,
-      browsers: <%= JSON.stringify(testBrowsers) %><% } %>
+    'tests': {
+      'spec': {
+        'runInDev': <%= spec %>,
+        'runInDist': <%= spec %><% if (spec || e2e) { %>,
+        'browsers': <%= JSON.stringify(testBrowsers) %><% } %>
+      },
+      'e2e': {
+        'runInDev': <%= e2e %>,
+        'runInDist': <%= e2e %><% if (spec || e2e) { %>,
+        'browsers': <%= JSON.stringify(testBrowsers) %><% } %>
+      }
     },
-    e2e: {
-      runInDev: <%= e2e %>,
-      runInDist: <%= e2e %><% if (spec || e2e) { %>,
-      browsers: <%= JSON.stringify(testBrowsers) %><% } %>
+    server: {
+      proxies: [{
+        context: '<%= proxy_context %>',
+        host: '<%= proxy_host %>',
+        port: <%= proxy_port %>
+      }]
     }
   },
 
-  app: {
-    angular_module: {
-      regular: '<%= angularModule %>',
-      withMocks: '<%= angularModule %>.mock',
-      templates: '<%= angularModule %>.templates',
-      translations: '<%= angularModule %>.translations'
+  'app': {
+    'angular_module': {
+      'regular': '<%= angularModule %>',
+      'withMocks': '<%= angularModule %>.mock',
+      'templates': '<%= angularModule %>.templates',
+      'translations': '<%= angularModule %>.translations'
     }
   },
 
-  vendor: {
-    files: {
-      js: [
+  'vendor': {
+    'files': {
+      'js': [
         'angular/angular.js'
       ],
-      js_mock: [<% if (spec || e2e) { %>
+      'js_mock': [<% if (spec || e2e) { %>
         // required to run spec tests
         'angular-mocks/angular-mocks.js'
       <% } %>],
-      js_spec: [],
-      js_e2e: [],
-      css: [],
-      assets: [<% if (ie8) { %>
+      'js_spec': [],
+      'js_e2e': [],
+      'css': [],
+      'assets': [<% if (ie8) { %>
         // IE8 polyfills
         'json3/lib/json3.min.js',
         'respond/dest/respond.min.js',
