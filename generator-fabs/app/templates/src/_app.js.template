@@ -7,5 +7,5 @@
       $scope.welcome = 'Hello fabs!';
     }
 
-  module.controller(AppCtrl.name, AppCtrl);
+  module.controller('AppCtrl', AppCtrl);
 })();
