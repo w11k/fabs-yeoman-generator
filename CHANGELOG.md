@@ -1,6 +1,15 @@
 # fabs Yeoman Generator Changelog
 
 
+<a name="0.2.1"></a>
+## 0.2.1 (2015-07-06)
+
+
+### Bug Fixes
+
+* **generated-code:** register controller with a string literal ([efd0f3c0](https://github.com/w11k/fabs-yeoman-generator/commit/efd0f3c050ff80774405103b9cc1a45eae745bd6))
+
+
 <a name="0.2.0"></a>
 ## 0.2.0 (2015-05-13)
 
