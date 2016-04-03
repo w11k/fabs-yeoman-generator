@@ -1,6 +1,6 @@
 {
   "name": "generator-fabs",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A Yeoman Generator for AngularJS Projects using fabs as Build Tool",
   "homepage": "http://github.com/w11k/fabs-yeoman-generator",
   "keywords": [ "yeoman-generator", "fabs", "angularjs", "yeoman", "scaffolding" ],
