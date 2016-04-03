@@ -201,6 +201,18 @@ var generator = yeoman.generators.Base.extend({
       ],
       function (answers) {
         lodash.extend(settings, answers);
+
+        settings.proxies = [];
+
+        if (settings.proxy) {
+          settings.proxies.push({
+            context: settings.proxy_context,
+            host: settings.proxy_host,
+            port: settings.proxy_port
+
+          });
+        }
+
         done();
       });
   },
