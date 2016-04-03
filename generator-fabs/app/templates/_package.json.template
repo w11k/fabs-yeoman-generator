@@ -8,6 +8,11 @@
     "lodash": "3.8.0"
   },
 
+  "scripts": {
+    "bower": "bower",
+    "grunt": "grunt"
+  },
+
   "engines": {
     "node": ">=0.10.29"
   }
