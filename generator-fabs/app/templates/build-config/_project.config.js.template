@@ -33,11 +33,7 @@ module.exports = {
       }
     },
     server: {
-      proxies: [{
-        context: '<%= proxy_context %>',
-        host: '<%= proxy_host %>',
-        port: <%= proxy_port %>
-      }]
+      proxies: <%= JSON.stringify(proxies) %>
     }
   },
 

@@ -1,6 +1,21 @@
 # fabs Yeoman Generator Changelog
 
 
+<a name="0.3.0"></a>
+## 0.3.0 (2016-04-04)
+
+
+### Fetures
+
+* **fabs:** update fabs to 0.12.5
+* **npm:** add scripts block to generated package.json
+
+
+### Bug Fixes
+
+* **proxy:** fix generating project without proxy ([439a9e2f](https://github.com/w11k/fabs-yeoman-generator/commit/439a9e2f198462cc63bf27733d5f5d7d3c323d48))
+
+
 <a name="0.2.1"></a>
 ## 0.2.1 (2015-07-06)
 

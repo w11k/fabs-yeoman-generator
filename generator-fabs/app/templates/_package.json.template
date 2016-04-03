@@ -4,8 +4,13 @@
 
   "devDependencies": {
     "grunt": "0.4.5",
-    "fabs": "0.10.0",
+    "fabs": "0.12.5",
     "lodash": "3.8.0"
+  },
+
+  "scripts": {
+    "bower": "bower",
+    "grunt": "grunt"
   },
 
   "engines": {
