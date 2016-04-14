@@ -1,6 +1,15 @@
 # fabs Yeoman Generator Changelog
 
 
+<a name="0.3.1"></a>
+## 0.3.1 (2016-04-14)
+
+
+### Bug Fixes
+
+* **dependencies:** add bower as local dependency, do not rely on global bower in generated project ([e9ff8dcb](https://github.com/w11k/fabs-yeoman-generator/commit/e9ff8dcb3a65ec74c56fed4b1081c2d4845998e4))
+
+
 <a name="0.3.0"></a>
 ## 0.3.0 (2016-04-04)
 
